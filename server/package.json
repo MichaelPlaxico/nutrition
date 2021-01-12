@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "apollo-server": "^2.19.1",
+    "graphql": "^15.4.0",
+    "graphql-tools": "^7.0.2",
+    "path": "^0.12.7",
+    "react-query": "^3.5.12"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "link-module-alias": "^1.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm server.js",
+    "postinstall": "link-module-alias",
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
+  },
+  "_moduleAliases": {
+    "#schema": "src/schema/index.js",
+    "#resolvers": "src/schema/resolvers/index.js",
+    "#typeDefs": "src/schema/typeDefs/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
